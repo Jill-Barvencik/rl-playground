@@ -8,9 +8,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
 
-from playground.agent import QLearningAgent
-from playground.environment import make_adapter
-from playground.deep import train_dqn  # requires: stable-baselines3, torch
+from rl_playground.agent import QLearningAgent
+from rl_playground.environment import make_adapter
+from rl_playground.deep import train_dqn  # requires: stable-baselines3, torch
 
 # ==========================================================
 # Page Setup — Fullscreen, Dark, Minimal Chrome

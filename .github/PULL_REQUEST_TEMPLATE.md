@@ -5,7 +5,7 @@ Kurz: Was und warum?
 - …
 
 ## Test
-- [ ] Lokal gestartet: `streamlit run playground/ui.py`
-- [ ] Tests laufen: `pytest -q`
+- [ ] Lokal gestartet: `uv run streamlit run rl_playground/ui.py`
+- [ ] Tests laufen: `uv run pytest -q`
 
 ## Screenshots (UI)

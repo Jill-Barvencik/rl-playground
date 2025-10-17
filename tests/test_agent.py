@@ -1,5 +1,5 @@
 import numpy as np
-from playground.agent import QLearningAgent
+from rl_playground.agent import QLearningAgent
 
 def test_q_update():
     agent = QLearningAgent(n_states=4, n_actions=2, alpha=1.0, gamma=0.0, epsilon=0.0)
