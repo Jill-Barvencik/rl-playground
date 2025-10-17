@@ -1,11 +1,11 @@
 ## Summary
-Kurz: Was und warum?
+Brief description: What and why?
 
 ## Changes
 - …
 
-## Test
-- [ ] Lokal gestartet: `uv run streamlit run rl_playground/ui.py`
-- [ ] Tests laufen: `uv run pytest -q`
+## Testing
+- [ ] Locally started: `uv run streamlit run rl_playground/ui.py`
+- [ ] Tests pass: `uv run pytest -q`
 
 ## Screenshots (UI)
