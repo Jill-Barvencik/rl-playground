@@ -1,0 +1,99 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rl-playground"
+version = "0.1.0"
+description = "Interactive Reinforcement Learning Playground for educational and research purposes"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Jill-Barvencik" },
+]
+requires-python = ">=3.11"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Education",
+]
+keywords = ["reinforcement-learning", "machine-learning", "education", "visualization", "streamlit"]
+
+dependencies = [
+    "streamlit>=1.36",
+    "gymnasium>=0.29",
+    "numpy>=1.24",
+    "matplotlib>=3.8",
+    "stable-baselines3>=2.3.0",
+    "torch",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Jill-Barvencik/rl-playground"
+Repository = "https://github.com/Jill-Barvencik/rl-playground"
+Issues = "https://github.com/Jill-Barvencik/rl-playground/issues"
+
+[project.scripts]
+rl-playground = "streamlit:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["rl_playground"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501", # line too long (handled by formatter)
+    "B008", # do not perform function calls in argument defaults
+]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.2",
+]
